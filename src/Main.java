@@ -17,10 +17,16 @@ public class Main {
         */
 
         String[] genesisTransactions = {"naman sent priya 5 bitcoins", "priya sent khushboo 2 bitcoins"};
-        Block genesisBlock = new Block(0, genesisTransactions);
         String[] block2Transactions = {"naman sent 1 bitcoin to shubhi", "naman sent 1 bitcoin to vandi"};
-        System.out.println(genesisBlock.getBlockHash());
+        String[] block3Transactions = {"harsh sent 1 bitcoing to gautam"};
 
+
+        Block genesisBlock = new Block(0, genesisTransactions);
+        System.out.println(genesisBlock.getBlockHash());
+        Block block2 = new Block(genesisBlock.getBlockHash(), block2Transactions);
+        System.out.println(block2.getBlockHash());
+        Block block3 = new Block(block2.getBlockHash(), block3Transactions);
+        System.out.println(block3.getBlockHash());
     }
 
 }
